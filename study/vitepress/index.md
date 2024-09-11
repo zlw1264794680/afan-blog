@@ -211,5 +211,4 @@ jobs:
 
 可以在 github 项目仓库界面，通过查看`Actions`来进行错误排查。
 
-![image-20240911154321982](D:\demo-code\blog\public\docs\image-20240911154321982.png)
-
+![image-20240911154321982](/docs/image-20240911154321982.png)
