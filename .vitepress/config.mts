@@ -7,7 +7,7 @@ export default defineConfig({
   description: "记录编程学习",
   head: [
     // 网站icon
-    ["link", { rel: "icon", href: "/logo.svg" }],
+    ["link", { rel: "icon", href: "/afan-blog/logo.svg" }],
     // 注入百度统计代码
     [
       "script",
