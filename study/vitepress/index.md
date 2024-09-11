@@ -46,3 +46,5 @@ pnpm vitepress init
 pnpm run docs:dev
 
 ````
+
+## 搭建站点

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/blog/',
+  base: '/afan-blog/',
   title: "阿饭知识库",
   description: "记录编程学习",
   themeConfig: {
