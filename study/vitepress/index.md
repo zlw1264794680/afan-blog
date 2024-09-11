@@ -212,3 +212,21 @@ jobs:
 可以在 github 项目仓库界面，通过查看`Actions`来进行错误排查。
 
 ![image-20240911154321982](/docs/image-20240911154321982.png)
+
+## 百度统计
+
+[百度统计代码嵌入](https://tongji.baidu.com/main/setting/10000533894/home/site/index)
+
+操作步骤：
+
+- 设置需要统计的网站域名
+- 切换到使用设置，代码管理下，复制代码
+- 填入 VitePress 项目，发布后，在代码管理下，检测网站是否嵌入统计代码
+
+### 站点设置
+
+[VitePress 设置网站图标、script](https://vitepress.dev/zh/reference/site-config#example-adding-a-favicon)
+
+### 统计概览
+
+![image-1726067888997](/docs/image-1726067888997.png)
