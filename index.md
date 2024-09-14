@@ -21,6 +21,9 @@ features:
   - title: Vue3
     details: Vue3 全家桶
     link: /study/vue3/index
+  - title: uni-app
+    details: 基于 Vue 的跨端开发框架
+    link: /study/uni-app/index
   - title: Nest.js
     details: 基于 Nest.js 的后端服务框架
     link: /study/nestjs/index
