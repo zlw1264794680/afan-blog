@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "阿饭知识库"
   text: "记录编程学习"
-  tagline: 成为更优秀的自己
+  tagline: 熟练使用各种编程语言的HelloWorld
   image:
     src: /logo.svg
     alt: 阿饭知识库
