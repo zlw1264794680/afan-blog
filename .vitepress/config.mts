@@ -22,6 +22,11 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+    outlineTitle:"文章标题",
+    outline:[1,6],// 定义标题级别,字符串"deep"相当于是[2,6] 
     logo: "/logo.svg",
     // https://vitepress.dev/reference/default-theme-config
     nav: [
