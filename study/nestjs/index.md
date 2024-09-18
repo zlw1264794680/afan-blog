@@ -1,10 +1,21 @@
 # Nest.js
 
-## 相关命令
+## 项目学习
+
+https://github.com/buqiyuan/nest-admin/blob/main/src/modules/system/role/role.entity.ts
+
+
+
+## CLI 命令
 
 ```bash
+# --no-spec ： 不生成单元测试文件
 
+# 增删改查生成器
+nest g resource [dir]/[name] --no-spec
 
+# 路由器
+nest g controller [dir]/[name] --no-spec
 ```
 
 ## 操作redis
