@@ -11,7 +11,6 @@ IOS手机不支持“2021-12-30 22:22:30”里面带横杠“-”的时间格式
 
 **解决方案：**
 
-
 ```js
 
 // 处理时间兼容问题
@@ -41,21 +40,4 @@ const getDiffHoursMins = (time) => {
 
 **解决方案：**
 
-使用 `v-if` 配合占位符，在 `swiper` 组件滑动时，先不渲染 `video` 原生组件，等 `swiper` 组件滑动结束后，再渲染 `video` 原生组件。
-
-## 微信小程序对接企业微信客服
-
-[微信小程序对接企业微信客服](https://developers.weixin.qq.com/community/develop/article/doc/00026676a30c2804cdbead76056413)
-
-对应客服人员的链接、企业ID，都可以在企业微信后台获取！！！
-
-
-```js
-wx.openCustomerServiceChat({
-  extInfo: {url: ''}, // 对应客服人员的链接
-  corpId: '', // 企业ID
-  success(res) {}
-})
-
-```
-
+使用 `v-if` 配合占位符，在 `swiper` 组件滑动时，先不渲染 `video` 原生组件，等 `swiper` 组件滑动结束后，再渲染 `video` 原生组件。  

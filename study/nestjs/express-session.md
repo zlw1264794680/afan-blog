@@ -61,13 +61,13 @@ cookie对象包含以下参数：
 - signed: 是否对cookie包含签名，默认为true。
 - overwrite: 是否可以覆盖先前的同名cookie，默认为true。
 
-sameSite的值为strict，表示最严格的防护，有能力阻止所有CSRF攻击。然而，它的用户友好性太差，因为它可能会将所有GET请求进行CSRF防护处理。
+`sameSite`的值为`strict`，表示最严格的防护，有能力阻止所有`CSRF`攻击。然而，它的用户友好性太差，因为它可能会将所有`GET`请求进行`CSRF`防护处理。
 
-举例：用户在j.com点击了一个链接（GET请求），这个链接是到e.com的，而如果e.com使用了Samesite-cookies机制并且将值设置为了strict，那么用户将不能登陆e.com，因为在严格防护情况下，浏览器不允许将cookie从A域发送到Ｂ域。
+举例：用户在`j.com`点击了一个链接（GET请求），这个链接是到`e.com`的，而如果`e.com`使用了`Samesite-cookies`机制并且将值设置为了`strict`，那么用户将不能登陆`e.com`，因为在严格防护情况下，浏览器不允许将`cookie`从A域发送到Ｂ域。
 
-sameSite的值为lax，只会在使用危险HTTP方法发送跨域cookie的时候进行阻止，例如POST方式。
+`sameSite`的值为`lax`，只会在使用危险`HTTP`方法发送跨域`cookie`的时候进行阻止，例如`POST`方式。
 
-举例：用户在g.com提交了一个表单（POST请求），这个表单是提交到m.com的，而如果m.com使用了Samesite-cookies并且将值设置为了lax，那么用户将不能正常登陆m.com，因为浏览器不允许使用POST方式将cookie从A域发送到Ｂ域。
+举例：用户在`g.com`提交了一个表单（`POST`请求），这个表单是提交到`m.com`的，而如果`m.com`使用了`Samesite-cookies`并且将值设置为了`lax`，那么用户将不能正常登陆`m.com`，因为浏览器不允许使用`POST`方式将`cookie`从A域发送到Ｂ域。
 
 ## saveUninitialized、resave、rolling使用场景
 

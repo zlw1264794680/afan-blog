@@ -3,20 +3,17 @@
 > 由 Vite 和 Vue 驱动的静态站点生成器
 > 将 Markdown 变成优雅的文档，只需几分钟
 
-[Markdown 扩展](https://vitepress.dev/zh/guide/markdown#table-of-contents)
+Markdown 扩展：https://vitepress.dev/zh/guide/markdown#table-of-contents
 
-[默认主题配置](https://vitepress.dev/zh/reference/default-theme-config)
+默认主题配置：https://vitepress.dev/zh/reference/default-theme-config
 
 ## 快速搭建
 
 新建目录（项目名）
 
 ```bash
-
 pnpm add -D vitepress
-
 pnpm vitepress init
-
 ```
 
 ```txt
@@ -42,9 +39,7 @@ pnpm vitepress init
 ```
 
 ```bash
-
 pnpm run docs:dev
-
 ````
 
 ## 图片位置
@@ -60,6 +55,8 @@ Github Pages 建站的参考文章：
 [VitePress + GitHub Pages 文章1](https://jspao.com/guide/vitepress.html)
 
 [VitePress + GitHub Pages 文章2](https://www.cnblogs.com/zhishu/p/17804548.html)
+
+[VitePress做一个自己的知识博客](https://juejin.cn/post/7378702404319625256#heading-10)
 
 ### 修改前的 deploy.yml
 
@@ -138,7 +135,7 @@ jobs:
 
 ### 修改后的 deploy.yml
 
-```yam
+```yaml
 # 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
 #
 name: Deploy VitePress site to Pages

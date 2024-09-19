@@ -2,14 +2,17 @@
 
 ## 项目学习
 
-https://github.com/buqiyuan/nest-admin/blob/main/src/modules/system/role/role.entity.ts
+<https://github.com/buqiyuan/nest-admin/blob/main/src/modules/system/role/role.entity.ts>
 
+## 文档
 
+<https://nest.nodejs.cn/>
 
 ## CLI 命令
 
 ```bash
-# --no-spec ： 不生成单元测试文件
+# --no-spec 不生成（单元）测试文件
+# --flat 是平铺，不生成目录。
 
 # 增删改查生成器
 nest g resource [dir]/[name] --no-spec
@@ -144,3 +147,42 @@ ALTER DATABASE database_name  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 # 在创建数据库时指定字符集utf8mb4只会影响新创建的表，已经存在的表仍然使用默认的字符集。如果你想要将已经存在的表的字符集也改为utf8mb4
 ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
+
+## token
+
+### 同一账号多端同时登录
+
+- 客户端1登录，后台随机生成一个token1，redis key为token1 value为用户id
+- 客户端2登录，后台随机生成一个token2，redis key为token2 value为用户id
+
+### 同一账号只能在一个设备登录
+
+- 客户端1登录，后台随机生成一个token1，redis key为用户id value为token1
+- 客户端2登录，后台随机生成一个token2，redis key为用户id value为token2，删除redis key为用户id的value为token1的key-value
+
+## AOP面向切面编程
+
+![alt text](image-13.png)
+
+这样的横向扩展点就叫做切面，这种透明的加入一些切面逻辑的编程方式就叫做 `AOP` （面向切面编程）。
+
+`AOP` 的好处是可以把一些通用逻辑分离到切面中，保持业务逻辑的纯粹性，这样切面逻辑可以复用，还可以动态的增删。
+
+`Nest` 实现 `AOP` 的方式更多，一共有五种，包括 `Middleware`、`Guard`、`Pipe`、`Interceptor`、`ExceptionFilter`。
+
+![alt text](image-15.png)
+
+### 全局中间件
+
+```ts
+// main.ts
+app.use(function(req: Request, res: Response, next: NextFunction) {
+    console.log('before', req.url);
+    next();
+    console.log('after');
+})
+```
+![alt text](image-14.png)
+
+`handler`：控制器里处理路由的方法。
+
