@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-
+import mdItCustomAttrs from "markdown-it-custom-attrs";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/afan-blog/",
@@ -19,6 +19,22 @@ export default defineConfig({
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();`,
+    ],
+    // 引入图片灯箱 js 和 css 文件
+    [
+      "script",
+      {},
+      `
+        const script = document.createElement("script");
+        script.defer = "";
+        script.sync = "";
+        script.src = "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js";
+        document.body.append(script);
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css";
+        document.head.append(link);
+      `,
     ],
   ],
   themeConfig: {
@@ -50,5 +66,13 @@ export default defineConfig({
     socialLinks: [
       // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
+  },
+  markdown: {
+    config: (md) => {
+      // use more markdown-it plugins!
+      md.use(mdItCustomAttrs, "image", {
+        "data-fancybox": "gallery",
+      });
+    },
   },
 });
