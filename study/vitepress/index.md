@@ -44,7 +44,13 @@ pnpm run docs:dev
 
 ## 图片位置
 
+### 静态资源目录
+
 根目录新建`public`文件夹，图片丢里面，访问使用`/xxx.svg`。
+
+
+
+
 
 ## GitHub Pages 建站
 
