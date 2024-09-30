@@ -41,3 +41,14 @@ const getDiffHoursMins = (time) => {
 **解决方案：**
 
 使用 `v-if` 配合占位符，在 `swiper` 组件滑动时，先不渲染 `video` 原生组件，等 `swiper` 组件滑动结束后，再渲染 `video` 原生组件。  
+
+## HbuilderX 网络问题导致插件下载失败
+
+![image-20240929095021646](index.assets/image-20240929095021646.png)
+
+这咋会出现网络问题！vscode国外资源站点都不会出现网络问题。
+
+经过一顿查阅资料，逛论坛，发现要以管理身份启动HbuilderX. (公司内网无法直接安装插件，设置好IE 代理，右击以管理员身份证运行软件，Hbuilder就能走IE代理啦！)
+
+重新按管理身份启动HbuilderX，在进行插件下载，启动运行。项目正常启动！
+

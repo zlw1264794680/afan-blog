@@ -44,7 +44,19 @@ pnpm run docs:dev
 
 ## 图片位置
 
-根目录新建`public`文件夹，图片丢里面，访问使用`/xxx.svg`。
+### 固定目录 
+
+根目录新建`public`文件夹，图片丢里面，访问地址，`${BASE_URL}/${BASE_DIR}/xxx.svg`。
+
+如：`/public/docs/xxx.png`，打包后：`https://zlw1264794680.github.io/afan-blog/docs/image-20240911154321982.png`
+
+### 打包目录
+
+如：`/study/vitepress/index`文章，文件图片目录为`/study/vitepress/index.assets`，打包后，`https://zlw1264794680.github.io/afan-blog/assets/image-20240924204840058.Ck7UqPbe.png`
+
+![image-20240929100745455](index.assets/image-20240929100745455.png)
+
+
 
 ## GitHub Pages 建站
 
