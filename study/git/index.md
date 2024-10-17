@@ -75,3 +75,20 @@ git tag -d v1.0.0
 git tag | xargs git tag -d
 
 ```
+
+## 修改已提交的commit信息
+
+https://blog.csdn.net/sodaslay/article/details/72948722
+
+```bash
+
+# 修改最后一次提交的commit信息（通过创建一个新的提交，来代替当前分支尖端）
+git commit --amend -m "修改最后一次提交的commit信息"
+
+# 修改指定提交的commit信息
+git rebase -i master~1 #最后一次
+git rebase -i master~5 #最后五次
+git rebase -i HEAD~3   #当前版本的倒数第三次状态
+git rebase -i 32e0a87f #指定的SHA位置
+
+```

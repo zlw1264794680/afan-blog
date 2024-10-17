@@ -51,4 +51,3 @@ const getDiffHoursMins = (time) => {
 经过一顿查阅资料，逛论坛，发现要以管理身份启动HbuilderX. (公司内网无法直接安装插件，设置好IE 代理，右击以管理员身份证运行软件，Hbuilder就能走IE代理啦！)
 
 重新按管理身份启动HbuilderX，在进行插件下载，启动运行。项目正常启动！
-

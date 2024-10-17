@@ -45,7 +45,7 @@ npm run build:uni-app
 ```vue
 <template>
     <view class="h-[100vh] bg flex flex-col relative">
-        <AfNavBar :title="navBarTitle" :content-style="navBarStyle" class="shrink-0"></AfNavBar>
+        <FreeNavBar :title="navBarTitle" :content-style="navBarStyle" class="shrink-0"></FreeNavBar>
         <view class="flex-1 overflow-hidden">
             <scroll-view :scroll-top="scrollTop" @scroll="scroll" scroll-y="true" class="h-full">
                 <view class="flex flex-col gap-[32rpx] p-[32rpx]">
@@ -81,7 +81,7 @@ npm run build:uni-app
                         <mp-html :content="lastTypingMessage" markdown
                             class="leading-[1.56] tracking-[3rpx] text-[#1D2129] text-[24rpx] break-words bg-white rounded-[24rpx] p-[32rpx] flex-1 whitespace-pre-wrap" />
                     </view>
-                    <AfLoading v-if="chatLoading"></AfLoading>
+                    <FreeLoading v-if="chatLoading"></FreeLoading>
                 </view>
             </scroll-view>
         </view>
