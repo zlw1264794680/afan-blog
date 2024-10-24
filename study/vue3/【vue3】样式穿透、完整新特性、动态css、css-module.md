@@ -1,5 +1,7 @@
 # 【vue3】样式穿透、完整新特性、动态css、css-module
 
+https://vincef0ng.cn/post/vue-scoped-deep-css/#Vue3-%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F%E5%8F%98%E5%8C%96
+
 https://blog.csdn.net/weixin_44171757/article/details/134095117
 
 ## 样式穿透
