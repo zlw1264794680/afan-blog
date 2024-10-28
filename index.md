@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "阿饭知识库"
-  text: "记录编程学习"
-  tagline: 熟练使用各种编程语言的HelloWorld
+  name: 阿饭知识库
+  text: 记录编程学习
+  tagline: 一个人几乎可以在任何他怀有无限热忱的事情上成功。
   image:
     src: /logo.svg
     alt: 阿饭知识库
@@ -13,9 +13,9 @@ hero:
     # - theme: brand
     #   text: 学习
     #   link: /study/index
-    - theme: alt
-      text: 开发日志
-      link: /log/index
+    # - theme: alt
+    #   text: 开发日志
+    #   link: /log/index
 
 features:
   - title: Vue3
