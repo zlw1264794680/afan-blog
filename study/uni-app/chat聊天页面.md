@@ -285,3 +285,15 @@ const sendChatBoxContent = async () => {
 }
 </style>
 ```
+
+## scroll-view 踩坑
+
+scroll-view 要能够区域范围内滚动，必须有一个明确的高度，或者父级元素有一个明确的高度。
+
+不可以是 `max-height` 这种。
+
+## 底部输入框 textarea 踩坑
+
+问题在于如何使得软键盘弹起的时候，textarea能跟着被弹起来？？？
+
+动态高度计算，添加一个 `padding-bottom` 的软键盘高度。
