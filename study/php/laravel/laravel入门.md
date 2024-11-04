@@ -90,3 +90,5 @@ test('getTopicList',function(){
 ```
 
 ![alt text](laravel入门.assets/image-1.png)
+
+![alt text](laravel入门.assets/image-2.png)
