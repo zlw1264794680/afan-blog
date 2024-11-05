@@ -92,3 +92,13 @@ test('getTopicList',function(){
 ![alt text](laravel入门.assets/image-1.png)
 
 ![alt text](laravel入门.assets/image-2.png)
+
+## X-XSRF-TOKEN
+
+身份验证，验证失败，http状态码是 419
+
+![alt text](laravel入门.assets/image-3.png)
+
+## 表单校验
+
+表单校验，校验失败，http状态码是 422
