@@ -1,5 +1,7 @@
 # laravel 入门
 
+开发人员要学会啃英文文档！！！
+
 ## laravel 官方提供的集成开发环境
 
 [herd](https://herd.laravel.com/windows) 一键式 PHP 开发环境。零依赖。零头痛。
@@ -88,3 +90,5 @@ test('getTopicList',function(){
 ```
 
 ![alt text](laravel入门.assets/image-1.png)
+
+![alt text](laravel入门.assets/image-2.png)
