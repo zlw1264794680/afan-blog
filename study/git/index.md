@@ -24,9 +24,7 @@ git push origin master
 
 ## git merge 合并分支
 
-
 合并同事的`feat-temp`分支内容，到`develop`分支
-
 
 ```bash
 
@@ -78,7 +76,7 @@ git tag | xargs git tag -d
 
 ## 修改已提交的commit信息
 
-https://blog.csdn.net/sodaslay/article/details/72948722
+<https://blog.csdn.net/sodaslay/article/details/72948722>
 
 ```bash
 
@@ -91,4 +89,20 @@ git rebase -i master~5 #最后五次
 git rebase -i HEAD~3   #当前版本的倒数第三次状态
 git rebase -i 32e0a87f #指定的SHA位置
 
+```
+
+## 查看项目的.git目录
+
+```bash
+git rev-parse --git-dir
+```
+
+![alt text](index.assets/image.png)
+
+```bash
+# linux 查询当前目录下的所有.git
+find . -name ".git"
+
+# 查看隐藏目录
+ls -a
 ```
