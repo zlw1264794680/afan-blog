@@ -41,10 +41,10 @@ export default defineConfig({
   ],
   themeConfig: {
     search: {
-      provider: 'local'
+      provider: "local",
     },
-    outlineTitle:"文章标题",
-    outline:[1,6],// 定义标题级别,字符串"deep"相当于是[2,6] 
+    outlineTitle: "文章标题",
+    outline: [1, 6], // 定义标题级别,字符串"deep"相当于是[2,6]
     logo: "/logo.svg",
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -75,6 +75,10 @@ export default defineConfig({
       md.use(mdItCustomAttrs, "image", {
         "data-fancybox": "gallery",
       });
+    },
+    theme: {
+      light: "vitesse-dark",
+      dark: "vitesse-dark",
     },
   },
 });

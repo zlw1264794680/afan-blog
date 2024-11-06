@@ -1,12 +1,164 @@
 # Nest.js
 
-## 项目学习
+`Nest` 是 `Node` 最流行的企业级开发框架，提供了 `IOC`、`AOP`、`微服务`等架构特性。
 
-<https://github.com/buqiyuan/nest-admin/blob/main/src/modules/system/role/role.entity.ts>
+`Nest` 是对标 `Java` 的 `Spring` 框架的后端框架。
 
 ## 文档
 
 <https://nest.nodejs.cn/>
+
+## 项目学习
+
+<https://github.com/buqiyuan/nest-admin/blob/main/src/modules/system/role/role.entity.ts>
+
+## 基础概念
+
+### IOC反转控制 - 依赖注入
+
+`Nest` 实现了一套依赖注入机制，叫做 `IoC`（Inverse of Control 反转控制）。
+
+简单说就是你只需要声明依赖了啥就行，不需要手动去 new 依赖，Nest 的 IoC 容器会自动给你创建并注入依赖。
+
+**创建项目**
+
+```bash
+npm i -g @nestjs/cli
+nest new project-name
+cd project-name
+```
+
+**cats.service.ts**
+
+`@Injectable()` 装饰器用来标记一个类可以作为依赖注入系统的一部分。
+
+```bash
+nest generate service cats
+```
+
+```ts
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class CatsService {
+  private readonly cats = [
+    { id: 1, name: 'Milo', age: 3 },
+    { id: 2, name: 'Otis', age: 5 },
+  ];
+
+  findAll(): any[] {
+    return this.cats;
+  }
+}
+```
+
+**cats.controller.ts**
+
+```bash
+nest generate controller cats
+```
+
+```ts
+import { Controller, Get } from '@nestjs/common';
+import { CatsService } from './cats.service';
+
+@Controller('cats')
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {}
+
+  @Get()
+  findAll() {
+    return this.catsService.findAll();
+  }
+}
+```
+
+**app.module.ts**
+
+通过 `@Module` 声明模块，它包含 `controllers` 和 `providers`。
+
+- **imports：** 用于导入其他模块，这些模块可能提供了当前模块需要的服务或控制器。
+- **controllers：** 注册模块中的控制器，这些控制器将处理 HTTP 请求。
+- **providers：** 注册模块中的服务和其他可注入的类。这些服务可以被模块中的其他组件通过依赖注入来使用。
+
+```ts
+import { Module } from '@nestjs/common';
+import { CatsController } from './cats/cats.controller';
+import { CatsService } from './cats/cats.service';
+
+@Module({
+  imports: [], // 导入其他模块
+  controllers: [CatsController], // 注册控制器
+  providers: [CatsService], // 注册服务
+})
+export class AppModule {}
+```
+
+**动态提供者**
+
+除了直接注册服务类，你还可以使用动态提供者来注册更复杂的服务。动态提供者允许你在运行时动态地创建和配置服务。
+
+```ts
+import { Module, Provider } from '@nestjs/common';
+import { CatsController } from './cats.controller';
+import { CatsService } from './cats.service';
+
+const catsServiceProvider: Provider = {
+  provide: 'CATS_SERVICE',
+  useClass: CatsService,
+};
+
+@Module({
+  imports: [],
+  controllers: [CatsController],
+  providers: [catsServiceProvider],
+})
+export class AppModule {}
+```
+
+在这个例子中，我们使用了一个配置对象 catsServiceProvider 来注册 CatsService，并指定了一个提供者令牌 'CATS_SERVICE'。这样，你可以在其他地方通过这个令牌来注入服务：
+
+```ts
+import { Inject, Controller, Get } from '@nestjs/common';
+import { CatsService } from './cats.service';
+
+@Controller('cats')
+export class CatsController {
+  constructor(@Inject('CATS_SERVICE') private readonly catsService: CatsService) {}
+
+  @Get()
+  findAll() {
+    return this.catsService.findAll();
+  }
+}
+```
+
+### AOP面向切面编程
+
+![alt text](./index.assets/image-13.png)
+
+这样的横向扩展点就叫做切面，这种透明的加入一些切面逻辑的编程方式就叫做 `AOP` （面向切面编程）。
+
+`AOP` 的好处是可以把一些通用逻辑分离到切面中，保持业务逻辑的纯粹性，这样切面逻辑可以复用，还可以动态的增删。
+
+`Nest` 实现 `AOP` 的方式更多，一共有五种，包括 `Middleware`、`Guard`、`Pipe`、`Interceptor`、`ExceptionFilter`。
+
+![alt text](./index.assets/image-15.png)
+
+### 全局中间件
+
+```ts
+// main.ts
+app.use(function(req: Request, res: Response, next: NextFunction) {
+    console.log('before', req.url);
+    next();
+    console.log('after');
+})
+```
+
+![alt text](./index.assets/image-14.png)
+
+`handler`：控制器里处理路由的方法。
 
 ## CLI 命令
 
@@ -127,7 +279,7 @@ export class SharedModule {}
 
 ### GUI操作
 
-![alt text](image.png)
+![alt text](./index.assets/image.png)
 
 ### 命令行操作
 
@@ -159,30 +311,3 @@ ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_
 
 - 客户端1登录，后台随机生成一个token1，redis key为用户id value为token1
 - 客户端2登录，后台随机生成一个token2，redis key为用户id value为token2，删除redis key为用户id的value为token1的key-value
-
-## AOP面向切面编程
-
-![alt text](image-13.png)
-
-这样的横向扩展点就叫做切面，这种透明的加入一些切面逻辑的编程方式就叫做 `AOP` （面向切面编程）。
-
-`AOP` 的好处是可以把一些通用逻辑分离到切面中，保持业务逻辑的纯粹性，这样切面逻辑可以复用，还可以动态的增删。
-
-`Nest` 实现 `AOP` 的方式更多，一共有五种，包括 `Middleware`、`Guard`、`Pipe`、`Interceptor`、`ExceptionFilter`。
-
-![alt text](image-15.png)
-
-### 全局中间件
-
-```ts
-// main.ts
-app.use(function(req: Request, res: Response, next: NextFunction) {
-    console.log('before', req.url);
-    next();
-    console.log('after');
-})
-```
-![alt text](image-14.png)
-
-`handler`：控制器里处理路由的方法。
-
