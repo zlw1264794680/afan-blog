@@ -150,7 +150,7 @@
 }
 
 
-/* 修改明亮主题下的代码块背景色 */
+/* 修改明亮主题下的代码块背景色为黑暗主题的 */
 .vp-adaptive-theme{
   --vp-c-bg: #1b1b1f;
   --vp-c-bg-alt: #161618;
@@ -162,6 +162,8 @@
   --vp-c-text-2: rgba(235, 235, 245, 0.6);
   --vp-c-text-3: rgba(235, 235, 245, 0.38);
 
+  --vp-code-block-divider-color: var(--vp-c-gutter);
+  --vp-code-line-number-color: var(--vp-c-text-3);
   --vp-code-block-bg: var(--vp-c-bg-alt);
   --vp-code-copy-code-border-color: var(--vp-c-divider);
   --vp-code-copy-code-bg: var(--vp-c-bg-soft);

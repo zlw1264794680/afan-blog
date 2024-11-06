@@ -76,9 +76,10 @@ export default defineConfig({
         "data-fancybox": "gallery",
       });
     },
+    lineNumbers: true, //代码显示行号
     theme: {
-      light: "vitesse-dark",
-      dark: "vitesse-dark",
+      light: "one-dark-pro",
+      dark: "one-dark-pro",
     },
   },
 });
