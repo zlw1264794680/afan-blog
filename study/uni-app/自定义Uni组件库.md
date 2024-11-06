@@ -1,4 +1,6 @@
-# 自定义组件库
+# 自定义Uni组件库
+
+基于工作设计开发的组件库，目前主要兼容微信小程序。
 
 ## FreeNavBar导航栏
 
@@ -370,4 +372,90 @@ defineExpose({
 
 <style lang="scss" scoped></style>
 
+```
+
+## FreeCellItem 列表可点击
+
+```vue
+<template>
+  <view
+    class="w-full relative"
+    :hover-class="clickable && 'btn-hover'"
+    @click="onClick"
+  >
+    <view class="center justify-between gap-5 py-2 px-4" :style="contentStyle">
+      <view
+        class="text-left"
+        :style="{
+          width: labelWidth,
+        }"
+      >
+        <slot name="label">{{ label }}</slot>
+      </view>
+      <view class="flex-1 min-h-80 center justify-end">
+        <slot>{{ value }}</slot>
+        <uni-icons v-if="arrow" type="right" color="#2F3238" size="12" />
+      </view>
+    </view>
+    <view
+      v-if="splitLine"
+      class="h-2 bg-line-1 m-auto"
+      :style="splitLineStyle"
+    ></view>
+  </view>
+</template>
+<script setup>
+const props = defineProps({
+  // 分割线
+  splitLine: {
+    type: Boolean,
+    default: true,
+  },
+  // label-width
+  labelWidth: {
+    type: String,
+    default: "120rpx",
+  },
+  // label
+  label: {
+    type: String,
+    default: "",
+  },
+  value: {
+    type: String,
+    default: "",
+  },
+  // cell样式
+  contentStyle: {
+    type: Object,
+    default() {
+      return {};
+    },
+  },
+  // 分割线样式
+  splitLineStyle: {
+    type: Object,
+    default() {
+      return {};
+    },
+  },
+  // 是否可点击
+  clickable: {
+    type: Boolean,
+    default: false,
+  },
+  // 右侧箭头
+  arrow: {
+    type: Boolean,
+    default: false,
+  },
+});
+const emit = defineEmits(["click"]);
+
+const onClick = () => {
+  if (!props.clickable) return;
+  emit("click");
+};
+</script>
+<style lang="scss" scoped></style>
 ```
