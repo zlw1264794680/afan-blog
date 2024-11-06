@@ -11,4 +11,3 @@
 ```bash
 pnpm add @nestjs/elasticsearch @elastic/elasticsearch
 ```
-
