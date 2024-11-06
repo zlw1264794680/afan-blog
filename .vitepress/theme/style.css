@@ -148,3 +148,25 @@
 .medium-zoom-image {
   z-index: 21;
 }
+
+
+/* 修改明亮主题下的代码块背景色 */
+.vp-adaptive-theme{
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+  --vp-c-border: #3c3f44;
+  --vp-c-divider: #2e2e32;
+  --vp-c-gutter: #000000;
+  --vp-c-text-2: rgba(235, 235, 245, 0.6);
+  --vp-c-text-3: rgba(235, 235, 245, 0.38);
+
+  --vp-code-block-bg: var(--vp-c-bg-alt);
+  --vp-code-copy-code-border-color: var(--vp-c-divider);
+  --vp-code-copy-code-bg: var(--vp-c-bg-soft);
+  --vp-code-copy-code-hover-bg: var(--vp-c-bg);
+  --vp-code-copy-code-hover-border-color: var(--vp-c-divider);
+  --vp-code-lang-color: var(--vp-c-text-3);
+  --vp-code-copy-code-active-text: var(--vp-c-text-2);
+}
