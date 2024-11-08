@@ -102,3 +102,13 @@ test('getTopicList',function(){
 ## 表单校验
 
 表单校验，校验失败，http状态码是 422
+
+## 无权限状态码
+
+401 未授权
+
+![alt text](laravel入门.assets/image-4.png)
+
+## session+cookies身份验证
+
+## sanctum身份验证
