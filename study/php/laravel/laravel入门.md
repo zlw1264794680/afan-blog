@@ -35,7 +35,10 @@ php artisan make:model -a 工厂名称（大驼峰-类名）
 php artisan make:resource 资源名称（大驼峰-类名）
 
 # 直接输入，回车，错误提示命令不全，显示相关的完整命令查看，相当于 -h 
-php artisan make
+php artisan make 
+
+# 查看当前项目的路由接口
+php artisan route:list
 ```
 
 ## 数据库目录结构说明
@@ -111,4 +114,55 @@ test('getTopicList',function(){
 
 ## session+cookies身份验证
 
+这种 `session` + `cookies` 的方式，在 `laravel` 中，叫做 `CSRF`的`TOKEN`。
+
+对于 小程序、App 这类没有 `cookies` 的，要使用 `sanctum`  身份验证。
+
+### 中间件对需要鉴权的路由加判断
+
+![alt text](laravel入门.assets/image-6.png)
+
+`except` 表示排除鉴权的路由
+
+### 保存登录状态
+
+![alt text](laravel入门.assets/image-9.png)
+
+### 对当前身份进行验证，作用于全部帖子路由
+
+![alt text](laravel入门.assets/image-14.png)
+
 ## sanctum身份验证
+
+<https://laravel.com/docs/11.x/sanctum#main-content>
+
+![alt text](laravel入门.assets/image-5.png)
+
+![alt text](laravel入门.assets/image-7.png)
+
+请求头格式：Authorization: Bearer {{TOKEN}}
+
+![alt text](laravel入门.assets/image-8.png)
+
+俩种Token生效的方法：
+
+- 写在 `Controller/api.php` 中，通过 `/api/xxx`请求。（推荐这种）
+- 写在 `routes/web.php` 中，通过 `/xxx`请求，login页面需要触发`/sanctum/csrf-cookie`接口。
+
+![alt text](laravel入门.assets/image-10.png)
+
+## 路由定义
+
+![alt text](laravel入门.assets/image-12.png)
+
+## 列表接口分页
+
+分页+连表查询（使用orm连表查询，需要外键，但是不推荐使用外键）
+
+连表自己写sql
+
+![alt text](laravel入门.assets/image-11.png)
+
+## 在模型文件关联表（不推荐）
+
+![alt text](laravel入门.assets/image-13.png)
