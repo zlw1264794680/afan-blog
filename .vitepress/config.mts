@@ -7,7 +7,7 @@ export default defineConfig({
   description: "记录编程学习",
   head: [
     // 网站icon
-    ["link", { rel: "icon", href: "/afan-blog/logo.svg" }],
+    ["link", { rel: "icon", href: "/afan-blog/logo.png" }],
     // 注入百度统计代码
     [
       "script",
@@ -45,7 +45,7 @@ export default defineConfig({
     },
     outlineTitle: "文章标题",
     outline: [1, 6], // 定义标题级别,字符串"deep"相当于是[2,6]
-    logo: "/logo.svg",
+    logo: "/logo.png",
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },

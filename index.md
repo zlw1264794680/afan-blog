@@ -7,7 +7,7 @@ hero:
   text: 记录编程学习
   tagline: 一个人几乎可以在任何他怀有无限热忱的事情上成功。
   image:
-    src: /logo.svg
+    src: /logo.png
     alt: 阿饭知识库
   actions:
     # - theme: brand
