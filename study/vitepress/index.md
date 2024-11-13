@@ -3,9 +3,9 @@
 > 由 Vite 和 Vue 驱动的静态站点生成器
 > 将 Markdown 变成优雅的文档，只需几分钟
 
-Markdown 扩展：https://vitepress.dev/zh/guide/markdown#table-of-contents
+Markdown 扩展：<https://vitepress.dev/zh/guide/markdown#table-of-contents>
 
-默认主题配置：https://vitepress.dev/zh/reference/default-theme-config
+默认主题配置：<https://vitepress.dev/zh/reference/default-theme-config>
 
 ## 快速搭建
 
@@ -17,7 +17,6 @@ pnpm vitepress init
 ```
 
 ```txt
-
 ┌  Welcome to VitePress!
 │
 ◇  Where should VitePress initialize the config?
@@ -34,8 +33,6 @@ pnpm vitepress init
 │  ● Default Theme + Customization
 │  ○ Custom Theme
 └
-
-
 ```
 
 ```bash
@@ -44,7 +41,7 @@ pnpm run docs:dev
 
 ## 图片位置
 
-### 固定目录 
+### 固定目录
 
 根目录新建`public`文件夹，图片丢里面，访问地址，`${BASE_URL}/${BASE_DIR}/xxx.svg`。
 
@@ -55,8 +52,6 @@ pnpm run docs:dev
 如：`/study/vitepress/index`文章，文件图片目录为`/study/vitepress/index.assets`，打包后，`https://zlw1264794680.github.io/afan-blog/assets/image-20240924204840058.Ck7UqPbe.png`
 
 ![image-20240929100745455](index.assets/image-20240929100745455.png)
-
-
 
 ## GitHub Pages 建站
 
@@ -137,6 +132,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
 ```
 
 ### 踩坑总结
@@ -220,7 +216,7 @@ jobs:
 
 可以在 github 项目仓库界面，通过查看`Actions`来进行错误排查。
 
-![image-20240911154321982](/docs/image-20240911154321982.png)
+![alt text](index.assets/2a6ca9c8ec6d30286be74926ef53c92.png)
 
 ## 百度统计
 
@@ -238,4 +234,4 @@ jobs:
 
 ### 统计概览
 
-![image-1726067888997](/docs/image-1726067888997.png)
+![alt text](index.assets/b920559979bac21234d2317f83d64b0.png)
