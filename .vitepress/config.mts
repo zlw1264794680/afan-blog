@@ -1,6 +1,9 @@
 import { defineConfig } from "vitepress";
 import mdItCustomAttrs from "markdown-it-custom-attrs";
 // https://vitepress.dev/reference/site-config
+
+import sidebarConfig from "./pagesConfig/index";
+
 export default defineConfig({
   base: "/afan-blog/",
   title: "阿饭知识库",
@@ -53,17 +56,7 @@ export default defineConfig({
       { text: "开发日志", link: "/log" },
     ],
 
-    sidebar: {
-      // '/study': [
-      //   {
-      //     text: '学习',
-      //     items: [
-      //       { text: 'Vue3', link: '/study/vue3/index' },
-      //       { text: 'Nest.js', link: '/study/nestjs/index' }
-      //     ]
-      //   }
-      // ]
-    },
+    sidebar: sidebarConfig,
 
     socialLinks: [
       // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }

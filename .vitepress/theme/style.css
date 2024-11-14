@@ -171,4 +171,5 @@
   --vp-code-copy-code-hover-border-color: var(--vp-c-divider);
   --vp-code-lang-color: var(--vp-c-text-3);
   --vp-code-copy-code-active-text: var(--vp-c-text-2);
+  --vp-code-block-color: var(--vp-c-text-2);
 }
