@@ -1,7 +1,5 @@
 # UI 可视化自动测试
 
-## UI 自动化测试工具推荐
-
 ![alt text](index.assets/image.png)
 
 这篇文章（[UI 自动化测试工具推荐](https://apifox.com/apiskills/ui-automation-testing-tools-2/)）确实涵盖了多种 UI 自动化测试工具，从整体来看，这些工具的核心功能和实现方式可以归纳为以下几点：
@@ -173,3 +171,8 @@
 ## 影刀 rpa 实现自动化测试
 
 [影刀快速入门](https://www.yingdao.com/yddoc/rpa/712111712911486976)
+
+
+## 结论
+
+人工测试 + 影刀rpa 重复测试（对报错操作有截图、录屏的） + apifox 接口测试（可以生成测试报告文档）
